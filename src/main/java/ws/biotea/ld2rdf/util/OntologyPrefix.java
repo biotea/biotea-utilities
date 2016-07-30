@@ -9,6 +9,7 @@ public enum OntologyPrefix {
 	OWL("http://www.w3.org/2002/07/owl#", "owl"),
 	//PROV
 	PROV("http://www.w3.org/ns/prov#", "prov"),
+	PAV("http://purl.org/pav/", "pav"),
 	//FOAF
 	FOAF("http://xmlns.com/foaf/0.1/", "foaf"), 
 	XSP("http://www.owl-ontologies.com/2005/08/07/xsp.owl#", "xsp"),	
@@ -21,7 +22,7 @@ public enum OntologyPrefix {
 	VOID("http://rdfs.org/ns/void#", "void"),
 	//DC
 	DCTERMS("http://purl.org/dc/terms/", "dcterms"),
-	DC("http://purl.org/dc/elements/1.1/", "dc"),
+	DC("http://purl.org/dc/elements/1.1/", "dc") 
 	;
 	
 	private String url;
