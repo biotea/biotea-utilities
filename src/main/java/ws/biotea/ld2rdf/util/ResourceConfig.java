@@ -91,6 +91,9 @@ public class ResourceConfig {
     public static String getDatasetPrefix(){
     	return (ResourceConfig.getProperty("biotea.dataset.prefix"));
     }
+    public static String getIdTag(){
+    	return (ResourceConfig.getProperty("biotea.idTag"));
+    }
     //File name prefixes
     public static String getTitleAbstractPrefix(){
     	return (ResourceConfig.getProperty("biotea.prefix.ta"));
