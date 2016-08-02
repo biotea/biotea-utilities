@@ -8,6 +8,7 @@ public enum ClassesAndProperties {
 	RDF_TYPE(OntologyPrefix.RDF.getNS(), OntologyPrefix.RDF.getURL(), "type"),
 	RDFS_RESOURCE(OntologyPrefix.RDFS.getNS(), OntologyPrefix.RDFS.getURL(), "resource"),
 	DCTERMS_PROP_REFERENCES(OntologyPrefix.DCTERMS.getNS(), OntologyPrefix.DCTERMS.getURL(), "references");
+	public static final String TEXT_PROPERTY = RDF_PROP_VALUE.getURLValue();
 
 	String value;
 	String ns;
