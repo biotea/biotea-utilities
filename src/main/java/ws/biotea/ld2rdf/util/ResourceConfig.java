@@ -28,6 +28,8 @@ public class ResourceConfig {
      */
     public static final String bio2rdf = "Bio2RDF";
 	public static final String CHAR_NOT_ALLOWED = "[^A-Za-z0-9]";
+	public final static String ISO_ENCODING = "ISO-8859-1";
+	public final static String UTF_ENCODING = "UTF-8";
 	public final static String NO_STRING = "";
 	public static final boolean USE_BIO2RDF;
 	static {
