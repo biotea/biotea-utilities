@@ -105,6 +105,14 @@ public class GlobalArticleConfig {
 		}		
 	}
 	
+	public static String getArticleIdFromRdfUri(String uri) {
+		if (ResourceConfig.USE_BIO2RDF) {
+			return uri.substring(uri.lastIndexOf(':'));
+		} else {
+			return uri.substring(uri.lastIndexOf('/'));
+		}		
+	}
+	
 	public static String getBaseURLAO() {
 		if (ResourceConfig.USE_BIO2RDF) {
 			//annotations

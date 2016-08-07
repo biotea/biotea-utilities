@@ -1,5 +1,7 @@
 package ws.biotea.ld2rdf.util;
 
+import ws.biotea.ld2rdf.util.rdfization.OntologyRDFizationPrefix;
+
 public enum ClassesAndProperties {
 	FOAF_PERSON(OntologyPrefix.FOAF.getNS(), OntologyPrefix.FOAF.getURL(), "Person"),
 	FOAF_AGENT(OntologyPrefix.FOAF.getNS(), OntologyPrefix.FOAF.getURL(), "Agent"), 
@@ -7,7 +9,10 @@ public enum ClassesAndProperties {
 	RDF_PROP_VALUE(OntologyPrefix.RDF.getNS(), OntologyPrefix.RDF.getURL(), "value"),
 	RDF_TYPE(OntologyPrefix.RDF.getNS(), OntologyPrefix.RDF.getURL(), "type"),
 	RDFS_RESOURCE(OntologyPrefix.RDFS.getNS(), OntologyPrefix.RDFS.getURL(), "resource"),
-	DCTERMS_PROP_REFERENCES(OntologyPrefix.DCTERMS.getNS(), OntologyPrefix.DCTERMS.getURL(), "references");
+	DCTERMS_PROP_REFERENCES(OntologyPrefix.DCTERMS.getNS(), OntologyPrefix.DCTERMS.getURL(), "references"),
+	BIBO_ACADEMIC_ARTICLE(OntologyRDFizationPrefix.BIBO.getNS(), OntologyRDFizationPrefix.BIBO.getURL(), "AcademicArticle"),
+	DOCO_SECTION(OntologyRDFizationPrefix.DOCO.getNS(), OntologyRDFizationPrefix.DOCO.getURL(), "Section")
+	;
 	public static final String TEXT_PROPERTY = RDF_PROP_VALUE.getURLValue();
 
 	String value;
