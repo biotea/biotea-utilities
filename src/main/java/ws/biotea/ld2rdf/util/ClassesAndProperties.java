@@ -11,8 +11,8 @@ public enum ClassesAndProperties {
 	RDFS_RESOURCE(OntologyPrefix.RDFS.getNS(), OntologyPrefix.RDFS.getURL(), "resource"),
 	DCTERMS_PROP_REFERENCES(OntologyPrefix.DCTERMS.getNS(), OntologyPrefix.DCTERMS.getURL(), "references"),
 	BIBO_ACADEMIC_ARTICLE(OntologyRDFizationPrefix.BIBO.getNS(), OntologyRDFizationPrefix.BIBO.getURL(), "AcademicArticle"),
-	DOCO_SECTION(OntologyRDFizationPrefix.DOCO.getNS(), OntologyRDFizationPrefix.DOCO.getURL(), "Section")
-	;
+	DOCO_SECTION(OntologyRDFizationPrefix.DOCO.getNS(), OntologyRDFizationPrefix.DOCO.getURL(), "Section"),
+	DCTERMS_PROP_TITLE(OntologyPrefix.DCTERMS.getNS(), OntologyPrefix.DCTERMS.getURL(), "title");
 	public static final String TEXT_PROPERTY = RDF_PROP_VALUE.getURLValue();
 
 	String value;

@@ -107,9 +107,9 @@ public class GlobalArticleConfig {
 	
 	public static String getArticleIdFromRdfUri(String uri) {
 		if (ResourceConfig.USE_BIO2RDF) {
-			return uri.substring(uri.lastIndexOf(':'));
+			return uri.substring(uri.lastIndexOf(':') + 1);
 		} else {
-			return uri.substring(uri.lastIndexOf('/'));
+			return uri.substring(uri.lastIndexOf('/') + 1);
 		}		
 	}
 	
