@@ -1,6 +1,7 @@
 package ws.biotea.ld2rdf.util;  
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.NoSuchElementException;
 
@@ -10,7 +11,7 @@ public enum OntologyPrefix {
 	//PROV
 	PROV("http://www.w3.org/ns/prov#", "prov"),
 	PAV("http://purl.org/pav/", "pav"),
-	//FOAF
+	//AO_FOAF
 	FOAF("http://xmlns.com/foaf/0.1/", "foaf"), 
 	XSP("http://www.owl-ontologies.com/2005/08/07/xsp.owl#", "xsp"),	
 	//Biotea
@@ -79,6 +80,7 @@ public enum OntologyPrefix {
 		map.put(OntologyPrefix.VOID.getNS(), OntologyPrefix.VOID.getURL());
 		return map;
 	}
+	
 	public static Map<String, String> mergePrefixes(Map<String, String> one, Map<String, String> two) {
 		Map<String, String> merge = new HashMap<String, String>();		
 		for (String key: one.keySet()) {
@@ -86,6 +88,17 @@ public enum OntologyPrefix {
 		}
 		for (String key: two.keySet()) {
 			merge.put(key, two.get(key));
+		}
+		return merge;
+	}
+	
+	public static Map<String, String> mergePrefixes(List<Map<String, String>> lst) {
+		Map<String, String> merge = new HashMap<String, String>();		
+		
+		for (Map<String, String> map: lst) {
+			for (String key: map.keySet()) {
+				merge.put(key, map.get(key));
+			}			
 		}
 		return merge;
 	}

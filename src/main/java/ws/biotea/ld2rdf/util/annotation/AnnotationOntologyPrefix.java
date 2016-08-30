@@ -5,12 +5,17 @@ import java.util.Map;
 import java.util.NoSuchElementException;
 
 public enum AnnotationOntologyPrefix {
+	//OA
+	OA_CORE("http://www.w3.org/ns/oa#", "oa"),
 	//AO
 	AO_CORE("http://purl.org/ao/core/", "ao"), 
 	AO_TYPES("http://purl.org/ao/types/", "aot"), 
 	AO_SELECTORS("http://purl.org/ao/selectors/", "aos"), 
 	AO_ANNOTEA("http://purl.org/ao/annotea/", "aoa"), 
-	AO_FOAF("http://purl.org/ao/foaf/", "aof"), 
+	//Agents
+	AO_FOAF("http://purl.org/ao/foaf/", "aof"),
+	FOAF("http://xmlns.com/foaf/0.1/", "foaf"),
+	//Provenance
 	PAV("http://purl.org/pav/", "pav"), //http://purl.org/swan/pav/provenance/
 	;
 	
@@ -131,7 +136,7 @@ public enum AnnotationOntologyPrefix {
 			AnnotationOntologyPrefix.AO_FOAF.getPrefix() + AnnotationOntologyPrefix.PAV.getPrefix() +
 			BioOntologyConfig.getPrefix("UMLS")
 			;
-	}
+	}   
     
 	public static Map<String, String> prefixesMap_AO() {	
 		Map<String, String> map = new HashMap<String, String>();
@@ -140,6 +145,26 @@ public enum AnnotationOntologyPrefix {
 		map.put(AnnotationOntologyPrefix.AO_SELECTORS.getNS(), AnnotationOntologyPrefix.AO_SELECTORS.getURL());
 		map.put(AnnotationOntologyPrefix.AO_ANNOTEA.getNS(), AnnotationOntologyPrefix.AO_ANNOTEA.getURL());
 		map.put(AnnotationOntologyPrefix.AO_FOAF.getNS(), AnnotationOntologyPrefix.AO_FOAF.getURL());
+		map.put(AnnotationOntologyPrefix.PAV.getNS(), AnnotationOntologyPrefix.PAV.getURL());
+		if (BioOntologyConfig.getPrefix("UMLS").length() != 0) {
+			map.put(BioOntologyConfig.getNS("UMLS"), BioOntologyConfig.getURL("UMLS"));
+		}
+		//map.put(Prefix.SCIENCE_COMMONS.getNS(), Prefix.SCIENCE_COMMONS.getURL());
+		return map;
+	}
+	
+	 public static String prefixes_OA() {		
+		return 
+			AnnotationOntologyPrefix.OA_CORE.getPrefix() +
+			AnnotationOntologyPrefix.FOAF.getPrefix() + AnnotationOntologyPrefix.PAV.getPrefix() +
+			BioOntologyConfig.getPrefix("UMLS")
+			;
+	}
+	
+	public static Map<String, String> prefixesMap_OA() {	
+		Map<String, String> map = new HashMap<String, String>();
+		map.put(AnnotationOntologyPrefix.OA_CORE.getNS(), AnnotationOntologyPrefix.OA_CORE.getURL());
+		map.put(AnnotationOntologyPrefix.FOAF.getNS(), AnnotationOntologyPrefix.FOAF.getURL());
 		map.put(AnnotationOntologyPrefix.PAV.getNS(), AnnotationOntologyPrefix.PAV.getURL());
 		if (BioOntologyConfig.getPrefix("UMLS").length() != 0) {
 			map.put(BioOntologyConfig.getNS("UMLS"), BioOntologyConfig.getURL("UMLS"));
