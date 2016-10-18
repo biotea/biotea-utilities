@@ -68,7 +68,12 @@ public class ResourceConfig {
     	}
     }
     
-    //BASE
+    //Mapping file
+    public static String getMappingFile() {
+    	return getProperty("mapping.propFile");
+    }
+    
+    //BASE    
     public static String getBioteaBase() {
         try {
             return res.getString("biotea.base");

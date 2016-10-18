@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1475001874373" name="http://bio2rdf.org/pmc_vocabulary.owl" uri="biotea_vocabulary.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1475001874373" name="http://www.bio2rdf.org/bio2rdf_pmc_sio_mapping.owl" uri="biotea_bio2rdf_mapping.owl"/>
+    </group>
+</catalog>

@@ -49,6 +49,7 @@ public class GlobalArticleConfig {
 	public static String BASE_URL_ORGANIZATION_DOI;
 	//final String BASE_URL_GROUP_DOI;
 	public String BASE_URL_REF;
+	public String BASE_URL_OTHER;
 	public String BASE_URL_PROCEEDINGS_PMC;
 	public String BASE_URL_CONFERENCE_PMC;
 	public static String BASE_URL_PROCEEDINGS_PUBMED;
@@ -220,6 +221,7 @@ public class GlobalArticleConfig {
 				BASE_URL_EXT_TABLE = GlobalArticleConfig.pmcURI + articleID + "/table/";
 				INLINE_FORM_FIG_LINK = GlobalArticleConfig.pmcURI + articleID + "/bin/";
 				CHEM_STRUCT_FIG_LINK = "http://www.ncbi.nlm.nih.gov/core/lw/2.0/html/tileshop_pmc/tileshop_pmc_inline.html?p=PMC3&id=" + articleID + "_";
+				BASE_URL_OTHER = ResourceConfig.BIOTEA_URL + ResourceConfig.getDatasetPrefix() + "_resource:" + articleID + "_other_";
 			} else {
 				//documents
 				PMC_DOCUMENT = ResourceConfig.BIOTEA_URL + ResourceConfig.getDatasetPrefix() + "doc/" + ResourceConfig.getDatasetPrefix() + "/" + articleID;
@@ -245,6 +247,7 @@ public class GlobalArticleConfig {
 				BASE_URL_EXT_TABLE = GlobalArticleConfig.pmcURI + articleID + "/table/";
 				INLINE_FORM_FIG_LINK = GlobalArticleConfig.pmcURI + articleID + "/bin/";
 				CHEM_STRUCT_FIG_LINK = "http://www.ncbi.nlm.nih.gov/core/lw/2.0/html/tileshop_pmc/tileshop_pmc_inline.html?p=PMC3&id=" + articleID + "_";
+				BASE_URL_OTHER = ResourceConfig.BIOTEA_URL + "section/" + ResourceConfig.getDatasetPrefix() + "doc_resource/" + articleID + "/other_";
 			}
 		}		
 	}

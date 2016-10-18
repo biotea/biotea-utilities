@@ -1,0 +1,736 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.bio2rdf.org/bio2rdf_pmc_sio_mapping.owl#"
+     xml:base="http://www.bio2rdf.org/bio2rdf_pmc_sio_mapping.owl"
+     xmlns:schema="http://schema.org/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:resource="http://semanticscience.org/resource/"
+     xmlns:pmc_vocabulary="http://bio2rdf.org/pmc_vocabulary:"
+     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:cito="http://purl.org/spar/cito/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:dcterms="http://purl.org/dc/terms/"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <owl:Ontology rdf:about="http://www.bio2rdf.org/bio2rdf_pmc_sio_mapping.owl">
+        <owl:imports rdf:resource="http://bio2rdf.org/pmc_vocabulary.owl"/>
+        <owl:imports rdf:resource="http://semanticscience.org/ontology/sio.owl"/>
+        <dcterms:creator>Leyla Garcia</dcterms:creator>
+        <dcterms:creator>Alexander Garcia</dcterms:creator>
+        <rdfs:comment>This is the mapping between pmc_vocabulary and sio</rdfs:comment>
+        <dcterms:creator>Michel Dumontier</dcterms:creator>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:annotatesResource -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:annotatesResource">
+        <rdfs:subPropertyOf rdf:resource="http://semanticscience.org/resource/SIO_000254"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:authorList -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:authorList">
+        <rdfs:subPropertyOf rdf:resource="http://semanticscience.org/resource/SIO_000008"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:citedBy -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:citedBy">
+        <rdfs:subPropertyOf rdf:resource="http://semanticscience.org/resource/SIO_000278"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:cites -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:cites">
+        <rdfs:subPropertyOf rdf:resource="http://semanticscience.org/resource/SIO_000277"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:context -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:context">
+        <rdfs:subPropertyOf rdf:resource="http://semanticscience.org/resource/SIO_000628"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:createdBy -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:createdBy">
+        <rdfs:subPropertyOf rdf:resource="http://semanticscience.org/resource/SIO_000364"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:editorList -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:editorList">
+        <rdfs:subPropertyOf rdf:resource="http://semanticscience.org/resource/SIO_000008"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:hasTopic -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:hasTopic">
+        <rdfs:subPropertyOf rdf:resource="http://semanticscience.org/resource/SIO_000628"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:mbox -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:mbox">
+        <rdfs:subPropertyOf rdf:resource="http://semanticscience.org/resource/SIO_000008"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:onResource -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:onResource">
+        <rdfs:subPropertyOf rdf:resource="http://semanticscience.org/resource/SIO_000332"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:publications -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:publications">
+        <rdfs:subPropertyOf rdf:resource="http://semanticscience.org/resource/SIO_000008"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:wasAttributedTo -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:wasAttributedTo">
+        <rdfs:subPropertyOf rdf:resource="http://semanticscience.org/resource/SIO_000364"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:wasDerivedFrom -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:wasDerivedFrom">
+        <rdfs:subPropertyOf rdf:resource="http://semanticscience.org/resource/SIO_000218"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:abstract -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:abstract">
+        <rdfs:subPropertyOf rdf:resource="http://semanticscience.org/resource/SIO_000300"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:body -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:body">
+        <rdfs:subPropertyOf rdf:resource="http://semanticscience.org/resource/SIO_000300"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:characterEncoding -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:characterEncoding">
+        <rdfs:subPropertyOf rdf:resource="http://semanticscience.org/resource/SIO_000300"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:chars -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:chars">
+        <rdfs:subPropertyOf rdf:resource="http://semanticscience.org/resource/SIO_000300"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:createdOn -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:createdOn">
+        <rdfs:subPropertyOf rdf:resource="http://semanticscience.org/resource/SIO_000300"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:doi -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:doi">
+        <rdfs:subPropertyOf rdf:resource="http://semanticscience.org/resource/SIO_000300"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:edition -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:edition">
+        <rdfs:subPropertyOf rdf:resource="http://semanticscience.org/resource/SIO_000300"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:eissn -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:eissn">
+        <rdfs:subPropertyOf rdf:resource="http://semanticscience.org/resource/SIO_000300"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:end -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:end">
+        <rdfs:subPropertyOf rdf:resource="http://semanticscience.org/resource/SIO_000300"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:familyName -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:familyName">
+        <rdfs:subPropertyOf rdf:resource="http://semanticscience.org/resource/SIO_000300"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:generatedAtTime -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:generatedAtTime">
+        <rdfs:subPropertyOf rdf:resource="http://semanticscience.org/resource/SIO_000300"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:givenName -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:givenName">
+        <rdfs:subPropertyOf rdf:resource="http://semanticscience.org/resource/SIO_000300"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:init -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:init">
+        <rdfs:subPropertyOf rdf:resource="http://semanticscience.org/resource/SIO_000300"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:isbn -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:isbn">
+        <rdfs:subPropertyOf rdf:resource="http://semanticscience.org/resource/SIO_000300"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:issn -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:issn">
+        <rdfs:subPropertyOf rdf:resource="http://semanticscience.org/resource/SIO_000300"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:issue -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:issue">
+        <rdfs:subPropertyOf rdf:resource="http://semanticscience.org/resource/SIO_000300"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:name -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:name">
+        <rdfs:subPropertyOf rdf:resource="http://semanticscience.org/resource/SIO_000300"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:num_items -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:num_items">
+        <rdfs:subPropertyOf rdf:resource="http://semanticscience.org/resource/SIO_000300"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:occurrences -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:occurrences">
+        <rdfs:subPropertyOf rdf:resource="http://semanticscience.org/resource/SIO_000300"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:offset -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:offset">
+        <rdfs:subPropertyOf rdf:resource="http://semanticscience.org/resource/SIO_000300"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:pageEnd -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:pageEnd">
+        <rdfs:subPropertyOf rdf:resource="http://semanticscience.org/resource/SIO_000300"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:pageStart -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:pageStart">
+        <rdfs:subPropertyOf rdf:resource="http://semanticscience.org/resource/SIO_000300"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:pmid -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:pmid">
+        <rdfs:subPropertyOf rdf:resource="http://semanticscience.org/resource/SIO_000300"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:range -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:range">
+        <rdfs:subPropertyOf rdf:resource="http://semanticscience.org/resource/SIO_000300"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:score -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:score">
+        <rdfs:subPropertyOf rdf:resource="http://semanticscience.org/resource/SIO_000300"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:shortDescription -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:shortDescription">
+        <rdfs:subPropertyOf rdf:resource="http://semanticscience.org/resource/SIO_000300"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:volume -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:volume">
+        <rdfs:subPropertyOf rdf:resource="http://semanticscience.org/resource/SIO_000300"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:AcademicArticle -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:AcademicArticle">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_001029"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:Agent -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:Agent">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000009"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:Annotation -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:Annotation">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_001166"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:Article -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:Article">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000154"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:AudioDocument -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:AudioDocument">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_001168"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:AudioVisualDocument -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:AudioVisualDocument">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000297"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:Book -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:Book">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000106"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:BookSection -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:BookSection">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000111"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:Chapter -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:Chapter">
+        <rdfs:subClassOf rdf:resource="http://bio2rdf.org/pmc_vocabulary:BookSection"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:CollectedDocument -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:CollectedDocument">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000148"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:Conference -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:Conference">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000009"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:Content -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:Content">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000015"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:Document -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:Document">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000148"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:DocumentPart -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:DocumentPart">
+        <rdfs:subClassOf rdf:resource="http://bio2rdf.org/pmc_vocabulary:Document"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:EditedBook -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:EditedBook">
+        <rdfs:subClassOf rdf:resource="http://bio2rdf.org/pmc_vocabulary:CollectedDocument"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:ElementSelector -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:ElementSelector">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000602"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:Email -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:Email">
+        <rdfs:subClassOf rdf:resource="http://bio2rdf.org/pmc_vocabulary:PersonalCommunicationDocument"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:ExactQualifier -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:ExactQualifier">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000105"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:Excerpt -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:Excerpt">
+        <rdfs:subClassOf rdf:resource="http://bio2rdf.org/pmc_vocabulary:DocumentPart"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:Figure -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:Figure">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000080"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:Film -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:Film">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000297"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:Image -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:Image">
+        <rdfs:subClassOf rdf:resource="http://bio2rdf.org/pmc_vocabulary:Document"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:Issue -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:Issue">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_001169"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:Journal -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:Journal">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000160"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:Letter -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:Letter">
+        <rdfs:subClassOf rdf:resource="http://bio2rdf.org/pmc_vocabulary:PersonalCommunicationDocument"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:Manual -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:Manual">
+        <rdfs:subClassOf rdf:resource="http://bio2rdf.org/pmc_vocabulary:Document"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:Manuscript -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:Manuscript">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000151"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:Note -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:Note">
+        <rdfs:subClassOf rdf:resource="http://bio2rdf.org/pmc_vocabulary:Document"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:OffsetRangeTextSelector -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:OffsetRangeTextSelector">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000602"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:Paragraph -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:Paragraph">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000110"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:Patent -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:Patent">
+        <rdfs:subClassOf rdf:resource="http://bio2rdf.org/pmc_vocabulary:Document"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:Person -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:Person">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000498"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:Proceedings -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:Proceedings">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000157"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:Quote -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:Quote">
+        <rdfs:subClassOf rdf:resource="http://bio2rdf.org/pmc_vocabulary:Excerpt"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:Report -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:Report">
+        <rdfs:subClassOf rdf:resource="http://bio2rdf.org/pmc_vocabulary:Document"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:Section -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:Section">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000111"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:Selector -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:Selector">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_001073"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:Slide -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:Slide">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000171"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:Slideshow -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:Slideshow">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_001170"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:Standard -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:Standard">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000618"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:StartEndElementSelector -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:StartEndElementSelector">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000602"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:Table -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:Table">
+        <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000419"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:Thesis -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:Thesis">
+        <rdfs:subClassOf rdf:resource="http://bio2rdf.org/pmc_vocabulary:Document"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://bio2rdf.org/pmc_vocabulary:WebPage -->
+
+    <rdf:Description rdf:about="http://bio2rdf.org/pmc_vocabulary:WebPage">
+        <rdfs:subClassOf rdf:resource="http://bio2rdf.org/pmc_vocabulary:Document"/>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.5.20160517-0735) https://github.com/owlcs/owlapi -->
+
