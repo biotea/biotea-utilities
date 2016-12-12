@@ -208,7 +208,7 @@ public class GlobalArticleConfig {
 				BASE_URL_REF = ResourceConfig.BIOTEA_URL + ResourceConfig.getDatasetPrefix() + "_resource:" + articleID + "_reference_";
 				//Lists
 				BASE_URL_REF_LIST = ResourceConfig.BIOTEA_URL + ResourceConfig.getDatasetPrefix() + "_resource:" + articleID + "_{0}_{1}_list1"; // {0} type of list, {1} ref id, for references without DOI or pubmedid
-				BASE_URL_LIST_PMC = ResourceConfig.BIOTEA_URL + ResourceConfig.getDatasetPrefix() + "_resource:" + articleID + "_{0}_list1"; //{0} list type
+				BASE_URL_LIST_PMC = ResourceConfig.BIOTEA_URL + ResourceConfig.getDatasetPrefix() + "_resource:" + articleID + "_{0}_list{1}"; //{0} list type
 				//Proceedings (we do not disambiguate so keep them as related to the document)
 				BASE_URL_PROCEEDINGS_PMC = ResourceConfig.BIOTEA_URL + ResourceConfig.getDatasetPrefix() + "_resource:" + articleID + "_proceedings_title_";
 				BASE_URL_CONFERENCE_PMC = ResourceConfig.BIOTEA_URL + ResourceConfig.getDatasetPrefix() + "_resource:" + articleID + "_conference_name_";
@@ -234,7 +234,7 @@ public class GlobalArticleConfig {
 				BASE_URL_REF = ResourceConfig.BIOTEA_URL + "reference/" + ResourceConfig.getDatasetPrefix() + "doc_resource/" + articleID + "/";
 				//Lists
 				BASE_URL_REF_LIST = ResourceConfig.BIOTEA_URL + "{0}/" + ResourceConfig.getDatasetPrefix() + "doc_resource/" + articleID + "/{1}:list1"; // {0} type of list, {1} ref id, for references without DOI or pubmedid
-				BASE_URL_LIST_PMC = ResourceConfig.BIOTEA_URL + "{0}/" + ResourceConfig.getDatasetPrefix() + "doc_resource/" + articleID + "/list1"; //{0} list type
+				BASE_URL_LIST_PMC = ResourceConfig.BIOTEA_URL + "{0}/" + ResourceConfig.getDatasetPrefix() + "doc_resource/" + articleID + "/list{1}"; //{0} list type
 				//Proceedings (we do not disambiguate so keep them as related to the document)
 				BASE_URL_PROCEEDINGS_PMC = ResourceConfig.BIOTEA_URL + "proceedings/" + ResourceConfig.getDatasetPrefix() + "doc_resource/" + articleID + "/title/";
 				BASE_URL_CONFERENCE_PMC = ResourceConfig.BIOTEA_URL + "conference/" + ResourceConfig.getDatasetPrefix() + "doc_resource/" + articleID + "/name/";
