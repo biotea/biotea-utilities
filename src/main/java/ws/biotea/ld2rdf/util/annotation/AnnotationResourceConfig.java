@@ -75,7 +75,7 @@ public class AnnotationResourceConfig {
     		return false;
     	} else {
     		try {
-    			return Boolean.getBoolean(str);
+    			return Boolean.valueOf(str).booleanValue();
     		} catch (Exception e) {
     			return false;
     		}

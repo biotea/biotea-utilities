@@ -18,6 +18,7 @@ public class ResourceConfig {
      * URI for other datasets linked to
      */
     public static final String IDENTIFIERS_ORG_PUBMED = "http://identifiers.org/pubmed/";
+    public static final String IDENTIFIERS_ORG_PAGE_PUBMED = "http://info.identifiers.org/pubmed/";
     public static final String BIO2RDF_PUBMED = "http://bio2rdf.org/pubmed:";
     /*
      * RDF type property
@@ -115,7 +116,7 @@ public class ResourceConfig {
     		return false;
     	} else {
     		try {
-    			return Boolean.getBoolean(str);
+    			return Boolean.valueOf(str).booleanValue();
     		} catch (Exception e) {
     			return false;
     		}
