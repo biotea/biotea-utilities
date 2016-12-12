@@ -15,7 +15,7 @@ public enum OntologyPrefix {
 	FOAF("http://xmlns.com/foaf/0.1/", "foaf"), 
 	XSP("http://www.owl-ontologies.com/2005/08/07/xsp.owl#", "xsp"),	
 	//Biotea
-	BIOTEA("http://www.biotea.ws/ontology/ao_biotea.owl#", "biotea"), 
+	BIOTEA("https://github.com/biotea/biotea-ontololgy#", "biotea"), 
 	//RDF
 	RDF("http://www.w3.org/1999/02/22-rdf-syntax-ns#", "rdf"), 
 	RDFS("http://www.w3.org/2000/01/rdf-schema#", "rdfs"),	
@@ -23,7 +23,9 @@ public enum OntologyPrefix {
 	VOID("http://rdfs.org/ns/void#", "void"),
 	//DC
 	DCTERMS("http://purl.org/dc/terms/", "dcterms"),
-	DC("http://purl.org/dc/elements/1.1/", "dc") 
+	DC("http://purl.org/dc/elements/1.1/", "dc"),
+	//SIO
+	SIO("http://semanticscience.org/resource/", "sio")
 	;
 	
 	private String url;
@@ -78,6 +80,7 @@ public enum OntologyPrefix {
 		map.put(OntologyPrefix.PROV.getNS(), OntologyPrefix.PROV.getURL());
 		map.put(OntologyPrefix.OWL.getNS(), OntologyPrefix.OWL.getURL());
 		map.put(OntologyPrefix.VOID.getNS(), OntologyPrefix.VOID.getURL());
+		map.put(OntologyPrefix.SIO.getNS(), OntologyPrefix.SIO.getURL());
 		return map;
 	}
 	
