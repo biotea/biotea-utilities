@@ -12,7 +12,7 @@ public class ResourceConfig {
      * Biotea URIs
      */
     public final static String BIOTEA_URL = "http://" + ResourceConfig.getBioteaBase() + "/";
-    public final static String BIOTEA_RDFIZATOR = ResourceConfig.BIOTEA_URL + "agent/biotea_serializer/";
+    public final static String BIOTEA_RDFIZATOR = "http://biotea.github.io/agent/biotea_serializer";
   	public final static String BIOTEA_DATASET = ResourceConfig.BIOTEA_URL + ResourceConfig.getDataset();
     /*
      * URI for other datasets linked to
