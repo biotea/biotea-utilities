@@ -25,7 +25,9 @@ public enum OntologyPrefix {
 	DCTERMS("http://purl.org/dc/terms/", "dcterms"),
 	DC("http://purl.org/dc/elements/1.1/", "dc"),
 	//SIO
-	SIO("http://semanticscience.org/resource/", "sio")
+	SIO("http://semanticscience.org/resource/", "sio"),
+	//WikiData
+	WIKI_DATA("http://www.wikidata.org/entity/", "wd")
 	;
 	
 	private String url;
@@ -81,6 +83,7 @@ public enum OntologyPrefix {
 		map.put(OntologyPrefix.OWL.getNS(), OntologyPrefix.OWL.getURL());
 		map.put(OntologyPrefix.VOID.getNS(), OntologyPrefix.VOID.getURL());
 		map.put(OntologyPrefix.SIO.getNS(), OntologyPrefix.SIO.getURL());
+		map.put(OntologyPrefix.WIKI_DATA.getNS(), OntologyPrefix.WIKI_DATA.getURL());
 		return map;
 	}
 	

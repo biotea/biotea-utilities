@@ -38,7 +38,7 @@ public class MappingConfig {
 			MappingConfig.lst.add(new Namespace(ws.biotea.ld2rdf.util.OntologyPrefix.RDF.getNS(), ws.biotea.ld2rdf.util.OntologyPrefix.RDF.getURL()));
 			MappingConfig.lst.add(new Namespace(ws.biotea.ld2rdf.util.OntologyPrefix.VOID.getNS(), ws.biotea.ld2rdf.util.OntologyPrefix.VOID.getURL()));
 			MappingConfig.lst.add(new Namespace(ws.biotea.ld2rdf.util.OntologyPrefix.SIO.getNS(), ws.biotea.ld2rdf.util.OntologyPrefix.SIO.getURL()));
-			
+			MappingConfig.lst.add(new Namespace(ws.biotea.ld2rdf.util.OntologyPrefix.WIKI_DATA.getNS(), ws.biotea.ld2rdf.util.OntologyPrefix.WIKI_DATA.getURL()));
 			try {
 				String[] bases = res.getString("bases").split(",");
 				for (int i = 0; i < bases.length; i +=2) {
