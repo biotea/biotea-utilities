@@ -121,7 +121,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
     "annotation"
 })
 @XmlRootElement(name = "nlm-citation")
-public class NlmCitation {
+public class NlmCitation implements GenericCitation {
 
     @XmlElements({
         @XmlElement(name = "collab", type = Collab.class),

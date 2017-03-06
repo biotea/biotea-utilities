@@ -148,7 +148,7 @@ import elsevier.jaxb.math.mathml.Math;
     "inlineSupplementaryMaterialsAndRelatedArticlesAndRelatedObjects"
 })
 @XmlRootElement(name = "element-citation")
-public class ElementCitation {
+public class ElementCitation implements GenericCitation {
 
     @XmlElements({
         @XmlElement(name = "publisher-name", type = PublisherName.class),

@@ -149,7 +149,7 @@ import elsevier.jaxb.math.mathml.Math;
     "content"
 })
 @XmlRootElement(name = "mixed-citation")
-public class MixedCitation {
+public class MixedCitation implements GenericCitation {
 
     @XmlElementRefs({
         @XmlElementRef(name = "lpage", type = Lpage.class),
