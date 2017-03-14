@@ -15,7 +15,7 @@ public enum OntologyPrefix {
 	FOAF("http://xmlns.com/foaf/0.1/", "foaf"), 
 	XSP("http://www.owl-ontologies.com/2005/08/07/xsp.owl#", "xsp"),	
 	//Biotea
-	BIOTEA("https://github.com/biotea/biotea-ontololgy#", "biotea"), 
+	BIOTEA("https://biotea.github.io/biotea-ontololgy#", "biotea"), 
 	//RDF
 	RDF("http://www.w3.org/1999/02/22-rdf-syntax-ns#", "rdf"), 
 	RDFS("http://www.w3.org/2000/01/rdf-schema#", "rdfs"),	
