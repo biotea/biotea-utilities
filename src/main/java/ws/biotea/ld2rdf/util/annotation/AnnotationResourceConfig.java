@@ -10,11 +10,6 @@ import ws.biotea.ld2rdf.util.Conversion;
 public class AnnotationResourceConfig {
 	private static Logger logger = Logger.getLogger(AnnotationResourceConfig.class);
 	private static ResourceBundle apikey = ResourceBundle.getBundle("apikey");
-	//annotations pattern
-    private static String BASE_URL_AO;
-    static {
-		initStaticPatterns();
-	}
     
   //GO    
     public static boolean getWiiGO() {
@@ -111,18 +106,16 @@ public class AnnotationResourceConfig {
     	return ResourceConfig.getProperty("save.annotation." + annotator.getName() + "." + ResourceConfig.getDatasetPrefix() + ".path");
     }
     
-    private static void initStaticPatterns() {
-		if (ResourceConfig.USE_BIO2RDF) {
-			//annotations
-			BASE_URL_AO = ResourceConfig.BIOTEA_URL + ResourceConfig.getDatasetPrefix() + "_resource:annotation{0}_";
+    public static String getBaseURLAnnotations(String base) {
+		if (ResourceConfig.getUseBio2RDF(base)) {
+			return ResourceConfig.getBioteaURL(base) + ResourceConfig.getDatasetPrefix() + "_resource:annotation{0}_";
 		} else {
-			//annotations
-			BASE_URL_AO = ResourceConfig.BIOTEA_URL + "annotation{0}/" + ResourceConfig.getDatasetPrefix() + "_resource/";//{0} should be replaced by the annotator
+			return ResourceConfig.getBioteaURL(base) + "annotation{0}/" + ResourceConfig.getDatasetPrefix() + "_resource/";//{0} should be replaced by the annotator
 		}
     }    
     
-    public static String getBaseURLAnnotator(String annotator) {
+    public static String getBaseURLAnnotator(String base, String annotator) {
     	String[] params = {annotator};
-		return Conversion.replaceParameter(BASE_URL_AO, params);//GlobalPmc.BASE_URL + "PMC" + pmcId;// + ".rdf";
+		return Conversion.replaceParameter(getBaseURLAnnotations(base), params);//GlobalPmc.BASE_URL + "PMC" + pmcId;// + ".rdf";
     }
 }

@@ -1,5 +1,6 @@
 package ws.biotea.ld2rdf.util;
 
+import java.util.Calendar;
 import java.util.ResourceBundle;
 
 import org.apache.log4j.Logger;
@@ -7,17 +8,16 @@ import org.apache.log4j.Logger;
 public class ResourceConfig {
 	private static ResourceBundle res = ResourceBundle.getBundle("config");
 	private static Logger logger = Logger.getLogger(ResourceConfig.class);
-    
+	
     /*
      * Biotea URIs
      */
-    public final static String BIOTEA_URL = "http://" + ResourceConfig.getBioteaBase() + "/";
     public final static String BIOTEA_RDFIZATOR = "http://biotea.github.io/agent/biotea_serializer";
-  	public final static String BIOTEA_DATASET = ResourceConfig.BIOTEA_URL + ResourceConfig.getDataset();
     /*
      * URI for other datasets linked to
      */
     public static final String IDENTIFIERS_ORG_PUBMED = "http://identifiers.org/pubmed/";
+    public static final String LINKED_LIFE_DATA = "http://linkedlifedata.com/resource/pubmed/id/";
     public static final String IDENTIFIERS_ORG_PAGE_PUBMED = "http://info.identifiers.org/pubmed/";
     public static final String BIO2RDF_PUBMED = "http://bio2rdf.org/pubmed:";
     /*
@@ -32,14 +32,6 @@ public class ResourceConfig {
 	public final static String ISO_ENCODING = "ISO-8859-1";
 	public final static String UTF_ENCODING = "UTF-8";
 	public final static String NO_STRING = "";
-	public static final boolean USE_BIO2RDF;
-	static {
-		if (ResourceConfig.getBioteaBase().equals("bio2rdf.org")) {
-			USE_BIO2RDF = true;
-		} else {
-			USE_BIO2RDF = false;
-		}
-	}
 
     public static String getProperty(String prop) {
         try {
@@ -62,25 +54,53 @@ public class ResourceConfig {
     }
     
     public static String[] getCommaSeparatedProperty(String property) {    	
+    	System.out.println("FLAG getCommaSeparatedProperty 1 " + property);
     	try {
+    		System.out.println("FLAG getCommaSeparatedProperty 2 " + res.getString(property));
     		return res.getString(property).split(",");    		
     	} catch (Exception e) {
     		return null;
     	}
     }
     
+    public static String[] getConfigSuffixes() {
+    	System.out.println("FLAG getConfigSuffixes");
+    	return ResourceConfig.getCommaSeparatedProperty("config.suffixes");
+    }
+    //Configuration for multiple production
+    public static String getConfigBase(String suffix) {
+		try {
+            return res.getString("config.base." + suffix);
+        } catch (Exception e) {
+    		return ("linkingdata.io");
+        }
+    }    
+    public static String getConfigDataset(String suffix) {
+		try {			
+            String dataset = res.getString("config.dataset." + suffix);
+            return ResourceConfig.getBioteaURL(ResourceConfig.getConfigBase(suffix)) + dataset;
+        } catch (Exception e) {
+        	Calendar cal = Calendar.getInstance();
+    		return ("linkingdata_dataset:linkingdata-pmc-" + (cal.get(Calendar.MONTH)+1) + cal.get(Calendar.YEAR));
+        }
+    }    
+    public static boolean getConfigSections(String suffix) {
+		return getBooleanProperty("config.sections." + suffix);
+    }    
+    public static boolean getConfigReferences(String suffix) {
+		return getBooleanProperty("config.references." + suffix);
+    }    
+    public static String getConfigMapping(String suffix) {
+    	return getProperty("config.mapping." + suffix);
+    }
+    public static String[] getConfigSameAs(String suffix) {
+    	String[] temp = ResourceConfig.getCommaSeparatedProperty("config.sameAs." + suffix);
+    	System.out.println("FLAG sameAs " + temp);
+    	return ResourceConfig.getCommaSeparatedProperty("config.sameAs." + suffix);
+    }
     //Mapping file
     public static String getMappingFile() {
     	return getProperty("mapping.propFile");
-    }
-    
-    //BASE    
-    public static String getBioteaBase() {
-        try {
-            return res.getString("biotea.base");
-        } catch (Exception e) {
-            return ("biotea.ws");
-        }
     }
     
     //Other URLS
@@ -92,10 +112,39 @@ public class ResourceConfig {
     	return (ResourceConfig.getProperty("doi.url"));
     }
     
-    //Dataset
-    public static String getDataset(){
-    	return (ResourceConfig.getProperty("biotea.dataset"));
+    //Base, base URL and dataset    
+    public static String getBioteaBase(String base) {
+    	if (base != null) {
+    		return base;
+    	} else {
+    		try {
+                return res.getString("biotea.base");
+            } catch (Exception e) {
+        		return ("linkingdata.io");
+            }
+    	}        
     }
+    public static String getBioteaURL(String base) {
+		return "http://" + ResourceConfig.getBioteaBase(base) + "/";
+	}
+    
+    public static String getBioteaDatasetURL(String base, String dataset){
+    	//public final static String BIOTEA_DATASET = ResourceConfig.BIOTEA_URL + ResourceConfig.getDataset();
+    	if (dataset != null) {
+    		return ResourceConfig.getBioteaURL(base) + dataset;
+    	} else {
+    		try {
+    			return ResourceConfig.getBioteaURL(base) + res.getString("biotea.dataset");
+            } catch (Exception e) {
+            	return ResourceConfig.getBioteaURL(base) +  
+        			("biotea_dataset:biotea-pmc-" + Conversion.calendarToString(Calendar.getInstance(), '-'));
+            }
+    	}
+    }
+    public static boolean getUseBio2RDF(String base) {
+		return ResourceConfig.getBioteaBase(base).equals("bio2rdf.org");
+	}
+    
     public static String getDatasetPrefix(){
     	return (ResourceConfig.getProperty("biotea.dataset.prefix"));
     }
@@ -123,12 +172,13 @@ public class ResourceConfig {
     	}
     }
     //Document URI
-    public static String getDocRdfUri(String docId) {
-		if (ResourceConfig.USE_BIO2RDF) {
+    public static String getDocRdfUri(String base, String docId) {
+		if (ResourceConfig.getUseBio2RDF(base)) {
 			//documents
-			return ResourceConfig.BIOTEA_URL + ResourceConfig.getDatasetPrefix() + ":" + docId;
+			return ResourceConfig.getBioteaURL(base) + ResourceConfig.getDatasetPrefix() + ":" + docId;
 		} else {
-			return ResourceConfig.BIOTEA_URL + ResourceConfig.getDatasetPrefix() + "doc/" + ResourceConfig.getDatasetPrefix() + "/" + docId;
+			return ResourceConfig.getBioteaURL(base) + ResourceConfig.getDatasetPrefix() + "doc/" + 
+				ResourceConfig.getDatasetPrefix() + "/" + docId;
 		}		
 	}
     //Save selectors

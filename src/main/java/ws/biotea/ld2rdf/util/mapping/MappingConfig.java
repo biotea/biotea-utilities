@@ -10,66 +10,62 @@ import ws.biotea.ld2rdf.util.ResourceConfig;
 
 public class MappingConfig {
 	private static Logger logger = Logger.getLogger(MappingConfig.class);
-	private static ResourceBundle res;	
-	static {
-		if (ResourceConfig.USE_BIO2RDF) {
-			res = ResourceBundle.getBundle("bio2rdf_mappings");
-			logger.info("USING Bio2RDF mapping");
+	
+	public static ResourceBundle initResourceBundle(String base) {
+		if (ResourceConfig.getUseBio2RDF(base)) {
+			return ResourceBundle.getBundle("bio2rdf_mappings");			
 		} else {
 			try {
-				res = ResourceBundle.getBundle(ResourceConfig.getMappingFile());
-				logger.info("USING provided mapping " + ResourceConfig.getMappingFile());
+				return ResourceBundle.getBundle(ResourceConfig.getMappingFile());				
 			} catch (Exception e) {
-				res = ResourceBundle.getBundle("default_mappings");
-				logger.info("USING default mapping (the provided one was not found!)");
+				return ResourceBundle.getBundle("default_mappings");				
 			}
 		}
-	}	
+	} 
 	
-	private static List<Namespace> lst; 
-	
-	public static List<Namespace> getAllNamespaces() {
-		if (MappingConfig.lst == null) {
-			MappingConfig.lst = new ArrayList<Namespace>();
-			MappingConfig.lst.add(new Namespace(ws.biotea.ld2rdf.util.OntologyPrefix.OWL.getNS(), ws.biotea.ld2rdf.util.OntologyPrefix.OWL.getURL()));
-			MappingConfig.lst.add(new Namespace(ws.biotea.ld2rdf.util.OntologyPrefix.RDF.getNS(), ws.biotea.ld2rdf.util.OntologyPrefix.RDF.getURL()));
-			MappingConfig.lst.add(new Namespace(ws.biotea.ld2rdf.util.OntologyPrefix.RDFS.getNS(), ws.biotea.ld2rdf.util.OntologyPrefix.RDFS.getURL()));
-			MappingConfig.lst.add(new Namespace(ws.biotea.ld2rdf.util.OntologyPrefix.XSP.getNS(), ws.biotea.ld2rdf.util.OntologyPrefix.XSP.getURL()));		
-			MappingConfig.lst.add(new Namespace(ws.biotea.ld2rdf.util.OntologyPrefix.RDF.getNS(), ws.biotea.ld2rdf.util.OntologyPrefix.RDF.getURL()));
-			MappingConfig.lst.add(new Namespace(ws.biotea.ld2rdf.util.OntologyPrefix.VOID.getNS(), ws.biotea.ld2rdf.util.OntologyPrefix.VOID.getURL()));
-			MappingConfig.lst.add(new Namespace(ws.biotea.ld2rdf.util.OntologyPrefix.SIO.getNS(), ws.biotea.ld2rdf.util.OntologyPrefix.SIO.getURL()));
-			MappingConfig.lst.add(new Namespace(ws.biotea.ld2rdf.util.OntologyPrefix.WIKI_DATA.getNS(), ws.biotea.ld2rdf.util.OntologyPrefix.WIKI_DATA.getURL()));
-			try {
-				String[] bases = res.getString("bases").split(",");
-				for (int i = 0; i < bases.length; i +=2) {
-					MappingConfig.lst.add(new Namespace(bases[i], bases[i+1]));
-				}
-			} catch (Exception e) {
-				logger.warn("Namespaces not properly configured");
+	public static List<Namespace> getAllNamespaces(String base) {
+		List<Namespace> lst = new ArrayList<Namespace>();
+		lst.add(new Namespace(ws.biotea.ld2rdf.util.OntologyPrefix.OWL.getNS(), ws.biotea.ld2rdf.util.OntologyPrefix.OWL.getURL()));
+		lst.add(new Namespace(ws.biotea.ld2rdf.util.OntologyPrefix.RDF.getNS(), ws.biotea.ld2rdf.util.OntologyPrefix.RDF.getURL()));
+		lst.add(new Namespace(ws.biotea.ld2rdf.util.OntologyPrefix.RDFS.getNS(), ws.biotea.ld2rdf.util.OntologyPrefix.RDFS.getURL()));
+		lst.add(new Namespace(ws.biotea.ld2rdf.util.OntologyPrefix.XSP.getNS(), ws.biotea.ld2rdf.util.OntologyPrefix.XSP.getURL()));		
+		lst.add(new Namespace(ws.biotea.ld2rdf.util.OntologyPrefix.RDF.getNS(), ws.biotea.ld2rdf.util.OntologyPrefix.RDF.getURL()));
+		lst.add(new Namespace(ws.biotea.ld2rdf.util.OntologyPrefix.VOID.getNS(), ws.biotea.ld2rdf.util.OntologyPrefix.VOID.getURL()));
+		lst.add(new Namespace(ws.biotea.ld2rdf.util.OntologyPrefix.SIO.getNS(), ws.biotea.ld2rdf.util.OntologyPrefix.SIO.getURL()));
+		lst.add(new Namespace(ws.biotea.ld2rdf.util.OntologyPrefix.WIKI_DATA.getNS(), ws.biotea.ld2rdf.util.OntologyPrefix.WIKI_DATA.getURL()));
+		try {
+			ResourceBundle res = initResourceBundle(base);
+			String[] bases = res.getString("bases").split(",");
+			for (int i = 0; i < bases.length; i +=2) {
+				lst.add(new Namespace(bases[i], bases[i+1]));
 			}
-				
+		} catch (Exception e) {
+			logger.warn("Namespaces not properly configured");
 		}
-		return MappingConfig.lst;
+		return lst;
 	}
 	
-	public static String getIdentifier() {
+	public static String getIdentifier(String base) {
 		try {
+			ResourceBundle res = initResourceBundle(base);
 			return res.getString("dtp.identifier");
 		} catch (Exception e) {
 			return null;
 		}
 	}
 	
-	public static String getClass(String namespace, String className) {
+	public static String getClass(String base, String namespace, String className) {
 		try {
+			ResourceBundle res = initResourceBundle(base);
 			return res.getString("class." + namespace + "." + className);
 		} catch (Exception e) {
 			return ws.biotea.ld2rdf.util.OntologyPrefix.RDFS.getURL() + "Resource";
 		}
 	}
 	
-	public static String getObjectProperty(String namespace, String opName) {
+	public static String getObjectProperty(String base, String namespace, String opName) {
 		try {
+			ResourceBundle res = initResourceBundle(base);
 			return res.getString("op." + namespace + "." + opName);
 		} catch (Exception e) {
 			logger.warn("Object property not properly configured: " + namespace + ":" + opName);
@@ -77,8 +73,9 @@ public class MappingConfig {
 		}
 	}
 	
-	public static DatatypeProperty getDatatypeProperty(String namespace, String dtpName) {
+	public static DatatypeProperty getDatatypeProperty(String base, String namespace, String dtpName) {
 		try {
+			ResourceBundle res = initResourceBundle(base);
 			return new DatatypeProperty(res.getString("dtp." + namespace + "." + dtpName));			
 		} catch (Exception e) {
 			logger.warn("Datatype property not properly configured: " + namespace + ":" + dtpName);

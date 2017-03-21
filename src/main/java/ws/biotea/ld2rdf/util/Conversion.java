@@ -87,13 +87,13 @@ public class Conversion {
 	 * @param cal
 	 * @return
 	 */
-	public static String calendarToString(Calendar cal) {
+	public static String calendarToString(Calendar cal, char separator) {
 		int day = cal.get(Calendar.DATE);
 		int month = cal.get(Calendar.MONTH)+ 1;
 		int year = cal.get(Calendar.YEAR);
 		String strDay = day < 10 ? "0" + day : "" + day;
 		String strMonth = month < 10 ? "0" + month : "" + month;
-		return ("" + strDay + "/" + strMonth + "/" + year);
+		return ("" + strDay + separator + strMonth + separator + year);
 	}
 	/**
 	 * Converts a string xsd:dateTime (2010-10-24T12:48:42.361Z) into a calendar date.
