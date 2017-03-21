@@ -53,10 +53,8 @@ public class ResourceConfig {
     	}
     }
     
-    public static String[] getCommaSeparatedProperty(String property) {    	
-    	System.out.println("FLAG getCommaSeparatedProperty 1 " + property);
+    public static String[] getCommaSeparatedProperty(String property) {    
     	try {
-    		System.out.println("FLAG getCommaSeparatedProperty 2 " + res.getString(property));
     		return res.getString(property).split(",");    		
     	} catch (Exception e) {
     		return null;
@@ -64,7 +62,6 @@ public class ResourceConfig {
     }
     
     public static String[] getConfigSuffixes() {
-    	System.out.println("FLAG getConfigSuffixes");
     	return ResourceConfig.getCommaSeparatedProperty("config.suffixes");
     }
     //Configuration for multiple production
@@ -94,8 +91,6 @@ public class ResourceConfig {
     	return getProperty("config.mapping." + suffix);
     }
     public static String[] getConfigSameAs(String suffix) {
-    	String[] temp = ResourceConfig.getCommaSeparatedProperty("config.sameAs." + suffix);
-    	System.out.println("FLAG sameAs " + temp);
     	return ResourceConfig.getCommaSeparatedProperty("config.sameAs." + suffix);
     }
     //Mapping file
