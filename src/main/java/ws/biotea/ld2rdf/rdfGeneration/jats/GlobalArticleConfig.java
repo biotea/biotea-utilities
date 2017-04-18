@@ -94,6 +94,20 @@ public class GlobalArticleConfig {
 		}		
 	}
 	
+	public static String getArticleParagraphRdfUri(String base, String articleID, String sectionParagraph) {
+		String[] secAndPara= sectionParagraph.split("_");
+		if (secAndPara.length != 2) {
+			secAndPara = new String[2];
+			secAndPara[0] = sectionParagraph;
+			secAndPara[1] = sectionParagraph;
+		}
+		if (ResourceConfig.getUseBio2RDF(base)) {
+			return ResourceConfig.getBioteaURL(base) + ResourceConfig.getDatasetPrefix() + "_resource:" + articleID + "_paragraph_" + secAndPara[0] + "_para_" + secAndPara[1]; //section-name:para-id					
+		} else {
+			return ResourceConfig.getBioteaURL(base) + "paragraph/" + ResourceConfig.getDatasetPrefix() + "doc_resource/" + articleID + "/" + secAndPara[0] + ":para_" + secAndPara[1]; //section-name:para-id
+		}		
+	}
+	
 	public static String getArticleUriBase(String base) {
 		if (ResourceConfig.getUseBio2RDF(base)) {
 			return ResourceConfig.getBioteaURL(base) + ResourceConfig.getDatasetPrefix() + ":";
