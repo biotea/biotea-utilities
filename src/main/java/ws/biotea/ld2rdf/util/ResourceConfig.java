@@ -69,7 +69,7 @@ public class ResourceConfig {
 		try {
             return res.getString("config.base." + suffix);
         } catch (Exception e) {
-    		return ("linkingdata.io");
+    		return ("purl.org/io/linkingdata");
         }
     }    
     public static String getConfigDataset(String suffix) {
@@ -77,8 +77,9 @@ public class ResourceConfig {
             String dataset = res.getString("config.dataset." + suffix);
             return ResourceConfig.getBioteaURL(ResourceConfig.getConfigBase(suffix)) + dataset;
         } catch (Exception e) {
+        	e.printStackTrace();
         	Calendar cal = Calendar.getInstance();
-    		return ("linkingdata_dataset:linkingdata-pmc-" + (cal.get(Calendar.MONTH)+1) + cal.get(Calendar.YEAR));
+    		return ("biotea-dataset:biotea." + suffix + ".pmc." + cal.get(Calendar.YEAR)) + (cal.get(Calendar.MONTH)+1);
         }
     }    
     public static boolean getConfigSections(String suffix) {
@@ -94,8 +95,12 @@ public class ResourceConfig {
     	return ResourceConfig.getCommaSeparatedProperty("config.sameAs." + suffix);
     }
     //Mapping file
-    public static String getMappingFile() {
-    	return getProperty("mapping.propFile");
+    public static String getMappingFile(String suffix) {
+    	if (suffix.length() != 0) {
+    		return getProperty("config.mapping." + suffix);
+    	} else {
+    		return getProperty("mapping.propFile");
+    	}    	
     }
     
     //Other URLS
@@ -107,6 +112,10 @@ public class ResourceConfig {
     	return (ResourceConfig.getProperty("doi.url"));
     }
     
+    public static boolean getPreferBlankNodes(){
+    	return getBooleanProperty("config.blankNodes");
+    }
+    
     //Base, base URL and dataset    
     public static String getBioteaBase(String base) {
     	if (base != null) {
@@ -115,7 +124,7 @@ public class ResourceConfig {
     		try {
                 return res.getString("biotea.base");
             } catch (Exception e) {
-        		return ("linkingdata.io");
+        		return ("purl.org/io/linkingdata");
             }
     	}        
     }
@@ -129,10 +138,10 @@ public class ResourceConfig {
     		return ResourceConfig.getBioteaURL(base) + dataset;
     	} else {
     		try {
-    			return ResourceConfig.getBioteaURL(base) + res.getString("biotea.dataset");
+    			return ResourceConfig.getBioteaURL(base) + "biota.dataset";
             } catch (Exception e) {
-            	return ResourceConfig.getBioteaURL(base) +  
-        			("biotea_dataset:biotea-pmc-" + Conversion.calendarToString(Calendar.getInstance(), '-'));
+            	Calendar cal = Calendar.getInstance();
+            	return ("biotea-dataset:biotea.pmc." + cal.get(Calendar.YEAR)) + (cal.get(Calendar.MONTH)+1);
             }
     	}
     }
@@ -144,7 +153,7 @@ public class ResourceConfig {
     	return (ResourceConfig.getProperty("biotea.dataset.prefix"));
     }
     public static String getIdTag(){
-    	return (ResourceConfig.getProperty("biotea.idTag"));
+    	return (ResourceConfig.getProperty("biotea.dataset.prefix"));
     }
     //File name prefixes
     public static String getTitleAbstractPrefix(){
