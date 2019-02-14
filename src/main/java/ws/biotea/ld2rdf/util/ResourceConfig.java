@@ -64,6 +64,7 @@ public class ResourceConfig {
     public static String[] getConfigSuffixes() {
     	return ResourceConfig.getCommaSeparatedProperty("config.suffixes");
     }
+    
     //Configuration for multiple production
     public static String getConfigBase(String suffix) {
 		try {
@@ -145,9 +146,19 @@ public class ResourceConfig {
             }
     	}
     }
+    
     public static boolean getUseBio2RDF(String base) {
 		return ResourceConfig.getBioteaBase(base).equals("bio2rdf.org");
 	}
+    
+    public static String getBioteaVersion(String suffix){
+		try {
+			return ResourceConfig.getProperty("config.version." + suffix);
+        } catch (Exception e) {
+        	Calendar cal = Calendar.getInstance();
+        	return ("" + cal.get(Calendar.YEAR)) + (cal.get(Calendar.MONTH)+1);
+        }
+    }
     
     public static String getDatasetPrefix(){
     	return (ResourceConfig.getProperty("biotea.dataset.prefix"));

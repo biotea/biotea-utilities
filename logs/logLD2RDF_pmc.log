@@ -1,0 +1,1 @@
+WARN  2019-02-06 16:02:01,293 [main] (ResourceConfig.java:40) - ---WARNING configuration---: Can't find resource for bundle java.util.PropertyResourceBundle, key inexistent
