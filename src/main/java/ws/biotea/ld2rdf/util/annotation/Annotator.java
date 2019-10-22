@@ -3,6 +3,7 @@ package ws.biotea.ld2rdf.util.annotation;
 public enum Annotator {
 	CMA("cma", "CMAParser", "ws.biotea.ld2rdf.annotation.parser", AnnotationResourceConfig.getCMAAnnotationService())
 	,NCBO("ncbo", "NCBOParser", "ws.biotea.ld2rdf.annotation.parser", AnnotationResourceConfig.getNCBOAnnotatorURL())
+	,AGROPORTAL("agroportal", "AgroPortalParser", "ws.biotea.ld2rdf.annotation.parser", AnnotationResourceConfig.getAgroPortalAnnotatorURL())
 	;
 	
 	String name;

@@ -51,6 +51,26 @@ public class AnnotationResourceConfig {
     public static String getNCBOStopwords(){
     	return (ResourceConfig.getProperty("ncbo.stopwords"));
     }
+  //AgroPortal Annotator
+    public static String getAgroPortalServiceURL(){
+    	return (ResourceConfig.getProperty("agroportal.service.url"));
+    }
+    
+    public static String getAgroPortalAnnotatorURL(){
+    	return (ResourceConfig.getProperty("agroportal.annotator.url"));
+    }
+    
+    public static String getAgroPortalAPIKey(){
+    	try {
+            return apikey.getString("agroportal.apikey");
+        } catch (Exception e) {
+        	logger.warn("---WARNING configuration---: " + e.getMessage());
+            return ("");
+        }
+    }
+    public static String getAgroPortalStopwords(){
+    	return (ResourceConfig.getProperty("agroportal.stopwords"));
+    }
     //Whatizit annotator
     public static String getWhatizitAnnotatorURL(){
     	return (ResourceConfig.getProperty("whatizit.annotator.url"));

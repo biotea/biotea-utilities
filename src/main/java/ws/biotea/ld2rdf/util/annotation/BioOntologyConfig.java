@@ -25,6 +25,23 @@ public class BioOntologyConfig {
         }
 	}
 	/**
+	 * True if the property is AgroPortal (agroportal,virtual-id,description,ns,url,ncbo-name)
+	 * @param prop
+	 * @return
+	 */
+	public static boolean isAgroPortal(String prop) {
+		try {
+            if ( res.getString(prop).split(",")[0].equals("agroportal") ) {
+            	return true;
+            } else {
+            	return false;
+            }            
+        } catch (Exception e) {
+        	logger.warn("---WARNING configuration---: " + e.getMessage());
+            return false;
+        }
+	}
+	/**
 	 * Returns the virtual id (ncbo,virtual-id,description,ns,url,ncbo-name)
 	 * @param prop
 	 * @return
